@@ -6,12 +6,17 @@ var Stack = function() {
 
   // Implement the methods below
   someInstance.push = function(value) {
+    storage[Object.keys(storage).length] = value;
   };
 
   someInstance.pop = function() {
+    var popVal = storage[Object.keys(storage).length - 1];
+    delete storage[Object.keys(storage).length - 1];
+    return popVal;
   };
 
   someInstance.size = function() {
+    return Object.keys(storage).length;
   };
 
   return someInstance;
